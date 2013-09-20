@@ -50,3 +50,7 @@ let NERDTreeMapOpenSplit="u"
 
 set t_Co=256
 colors zenburn
+set tabstop=8
+set expandtab
+set shiftwidth=4
+set softtabstop=4
