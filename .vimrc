@@ -37,11 +37,25 @@ noremap o :
 noremap O ;
 noremap k n
 noremap K N
+
 " Buffer Navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-n> <C-w>j
 nnoremap <C-e> <C-w>k
 nnoremap <C-i> <C-w>l
+
+" Tab Navigation
+nnoremap <C-l> gT
+nnoremap <C-y> gt
+
+" Syntastic
+let g:syntastic_python_checkers=['pylama']
+let g:syntastic_javascript_checkers=['jshint']
+
+" Column highlighting
+set textwidth=79
+set colorcolumn=+1
+
 " Plugin bindings
 nnoremap <F2> :NERDTreeToggle<CR>
 let NERDTreeMapActivateNode="y"
