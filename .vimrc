@@ -1,5 +1,22 @@
+" Vundle
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Valloric/YouCompleteMe'
+
+filetype plugin indent on
+syntax on
+
 let mapleader=","
-execute pathogen#infect()
 
 " Match command by qwerty position for colemak keyboard
 " Exception ; and : are switched
@@ -48,9 +65,17 @@ nnoremap <C-i> <C-w>l
 nnoremap <C-l> gT
 nnoremap <C-y> gt
 
+" Powerline
+set laststatus=2
+let g:Powerline_symbols='fancy'
+
 " Syntastic
 let g:syntastic_python_checkers=['pylama']
 let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_json_checkers=['jsonlint']
+
+" Filetypes
+au! BufRead,BufNewFile *.json set ft=json
 
 " Column highlighting
 set textwidth=79
