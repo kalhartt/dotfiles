@@ -1,0 +1,6 @@
+set imap_user = "josephh@rtsell.com"
+set imap_pass = "PASSWORD"
+set smtp_url = "smtp://josephh@rtsell.com@smtp.gmail.com:587/"
+set smtp_pass = "PASSWORD"
+set from = "josephh@rtsell.com"
+set realname = "josephh"

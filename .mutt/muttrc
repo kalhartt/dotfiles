@@ -1,12 +1,8 @@
-set imap_user = "kalhartt@gmail.com"
-set imap_pass = "PASSWORD"
-set smtp_url = "smtp://kalhartt@smtp.gmail.com:587/"
-set smtp_pass = "PASSWORD"
-set from = "kalhartt@gmail.com"
-set realname = "REALNAME"
+source ~/.mutt/kalhartt
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/kalhartt<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/rtsell<enter><change-folder>!<enter>'
 
 set editor = "vim"
-
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set imap_check_subscribed
@@ -33,12 +29,12 @@ alternative_order text/plain text/html *
 auto_view text/html
 # bind editor <Tab> complete-query
 # bind editor ^T complete
- bind editor <space> noop
+bind editor <space> noop
 
 
 # Gmail-style keyboard shortcuts
-bind index,pager u previous-entry
-bind index,pager e next-entry
+bind index,pager e previous-entry
+bind index,pager n next-entry
 macro index,pager y "<save-message>=[GMail]/All Mail<enter><enter>" "Gmail archive message"
 macro index,pager d "<save-message>=[GMail]/Trash<enter><enter>" "Gmail delete message"
 macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
