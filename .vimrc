@@ -2,21 +2,35 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'pangloss/vim-javascript'
-Bundle 'Valloric/YouCompleteMe'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'bufkill.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'elzr/vim-json'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+
+" Syntax plugins
+Plugin 'fatih/vim-go'
+Plugin 'groenewege/vim-less'
+Plugin 'ingydotnet/yaml-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+
+call vundle#end()
 filetype plugin indent on
 syntax on
 
-let mapleader=","
+nnoremap <Space> <Nop>
+let mapleader=" "
 
 " Match command by qwerty position for colemak keyboard
 " Exception ; and : are switched
@@ -55,29 +69,28 @@ noremap O ;
 noremap k n
 noremap K N
 
+" Window Navigation
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>n <C-w>j
+nnoremap <Leader>e <C-w>k
+nnoremap <Leader>i <C-w>l
+
 " Buffer Navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-n> <C-w>j
-nnoremap <C-e> <C-w>k
-nnoremap <C-i> <C-w>l
+nnoremap <Leader>l :bp<CR>
+nnoremap <Leader>y :bn<CR>
+nnoremap <Leader>q :BW<CR>
 
-" Tab Navigation
-nnoremap <C-l> gT
-nnoremap <C-y> gt
-
-" Powerline
-set laststatus=2
-let g:Powerline_symbols='fancy'
+" Airline
+let g:airline#extensions#tabline#enabled=1
 
 " Syntastic
+let g:syntastic_cpp_checkers=['cpplint']
 let g:syntastic_python_checkers=['pylama']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_json_checkers=['jsonlint']
 
-" Filetypes
-au! BufRead,BufNewFile *.json set ft=json
-
 " Column highlighting
+colorscheme nucolors
 set textwidth=79
 set colorcolumn=+1
 
@@ -87,10 +100,14 @@ let NERDTreeMapActivateNode="y"
 let NERDTreeMapOpenExpl="f"
 let NERDTreeMapOpenSplit="u"
 
+" Ctags
+set tags=.tags;
+
+set directory=$HOME/.swp//
+set hidden
 set t_Co=256
-colors zenburn
 set tabstop=8
-set expandtab
+set noexpandtab
 set shiftwidth=4
 set softtabstop=4
 set encoding=utf-8
