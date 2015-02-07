@@ -1,3 +1,6 @@
+# re-source .zshenv since /etc/profile resets PATH
+source $HOME/.zshenv
+
 # Sublime new window
 alias subl='subl -n'
 
