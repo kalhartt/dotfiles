@@ -24,6 +24,7 @@ Plugin 'ingydotnet/yaml-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
+Plugin 'wlangstroth/vim-racket'
 
 call vundle#end()
 filetype plugin indent on
