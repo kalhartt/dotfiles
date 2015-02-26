@@ -70,6 +70,11 @@ noremap O ;
 noremap k n
 noremap K N
 
+" Copy/paste
+nnoremap <Leader>; :setlocal paste! paste?<CR>
+nnoremap <Leader>o "*y
+nnoremap <Leader>O "+y
+
 " Window Navigation
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>n <C-w>j
